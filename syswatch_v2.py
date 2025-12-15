@@ -6,18 +6,21 @@ def affichage(data_systeme):
     print(f"Version               : {data_systeme['version']}")
     print(f"Architecture           : {data_systeme['architecture']}")
     print(f"Nom de la machine      : {data_systeme['hostname']}")
+    print("")
 
 def afficher_cpu(data_cpu):
     print("=== CPU ===")
     print(f"Cœurs physiques : {data_cpu['coeurs_physiques']}")
     print(f"Cœurs logiques  : {data_cpu['coeurs_logiques']}")
     print(f"Utilisation CPU : {data_cpu['utilisation']} %")
+    print("")
 
 def afficher_memoire(data_memoire):
     print("=== MÉMOIRE ===")
     print(f"Mémoire totale      : {octets_vers_go(data_memoire['total'])}")
     print(f"Mémoire disponible  : {octets_vers_go(data_memoire['disponible'])}")
     print(f"Utilisation mémoire : {data_memoire['pourcentage']} %")
+    print("")
 
 def afficher_disques(data_disques):
     print("=== DISQUES ===")
@@ -26,10 +29,10 @@ def afficher_disques(data_disques):
         print(f"  Total     : {octets_vers_go(disque['total'])}")
         print(f"  Utilisé   : {octets_vers_go(disque['utilise'])}")
         print(f"  Utilisation : {disque['pourcentage']} %")
+        print("")
 
 def octets_vers_go(octets):
     return f"{octets / (1024 ** 3):.2f} GB"
-
 
 def main():
     donnees = collecter_tout()
